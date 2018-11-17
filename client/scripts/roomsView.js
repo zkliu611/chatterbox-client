@@ -4,8 +4,16 @@ var RoomsView = {
   $select: $('#rooms select'),
 
   initialize: function() {
+    
     RoomsView.$select.append('<option id = "public">Public</option>');
+    
+    
+    RoomsView.$button.on('click', function() {
+      Rooms.add();
+    });
+    
     RoomsView.render();
+    
   },
 
   render: function() {
@@ -23,10 +31,9 @@ var RoomsView = {
     
     for ( var key in rooms ) {
       // display messages in a table style
-      code += '<option id = '+key+'>' + key + '</option>';
+      code += '<option id = ' + key + '>' + key + '</option>';
             
     }
-    console.log(code);
     
     RoomsView.$select.append(code);
   },
