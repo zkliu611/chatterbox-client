@@ -7,6 +7,7 @@ var MessagesView = {
   initialize: function() {
     
     MessagesView.render();
+    
   },
 
   render: function() {
@@ -23,7 +24,7 @@ var MessagesView = {
       
       // display messages in a table style
       code += '<table>';
-      code += '<thead><tr><th>User: ' + name + ' </th></tr></thead>';
+      code += '<thead class ="username" onclick="Friends.toggleStatus("name")"><tr><th>User: ' + name + ' </th></tr></thead>';
       code += '<tbody><tr><th>' + text + '</th></tr></tbody>';
       code += '<tfoot><tr><th>Message time: ' + time + '</th></tr></tfoot>';
       code += '</table>';    
@@ -40,8 +41,9 @@ var MessagesView = {
     var text = message.text;
     var roomname = message.roomname;
     
-    var code = '<div class = "roomname"><h3>' + name + '</h3><p>' + text + '</p></div>';
+    var code = '<div class = "roomname"><h3 class = "username" onclick="Friends.toggleStatus(name)">' + name + '</h3><p>' + text + '</p></div>';
     MessagesView.$chats.append(code);
+    
   }
   
 };
