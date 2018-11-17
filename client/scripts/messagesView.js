@@ -11,20 +11,22 @@ var MessagesView = {
 
   render: function() {
     
-    var messages = MessagesView.items.results;
+    var messages = App.data.results;
     
     var code = '';
     
     for ( var idx = 0; idx < messages.length; idx++ ) {
-      
+      // get the values from the object and sanitize it
       var name = sanitizeHtml(messages[idx].username);
       var text = sanitizeHtml(messages[idx].text);
       var time = sanitizeHtml(messages[idx].createdAt);
       
-      // display tweets in a table style
-      code += '<table><thead><tr><th>User: ' + name + ' </th></tr></thead>';
+      // display messages in a table style
+      code += '<table>';
+      code += '<thead><tr><th>User: ' + name + ' </th></tr></thead>';
       code += '<tbody><tr><th>' + text + '</th></tr></tbody>';
-      code += '<tfoot><tr><th>Message time: ' + time + '</th></tr></tfoot></table>';    
+      code += '<tfoot><tr><th>Message time: ' + time + '</th></tr></tfoot>';
+      code += '</table>';    
           
     }
     
