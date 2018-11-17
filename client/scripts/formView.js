@@ -8,8 +8,14 @@ var FormView = {
 
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
-    event.preventDefault();
+    // event.preventDefault();
+    var result = {};
     
+    result['username'] = App.username;
+    result['text'] = $('#message').val();
+    result['roomname'] = $('#rooms select').val();
+    
+    Parse.create(result);
     console.log('click!');
   },
 
@@ -19,3 +25,9 @@ var FormView = {
   }
 
 };
+
+      
+      
+
+
+
