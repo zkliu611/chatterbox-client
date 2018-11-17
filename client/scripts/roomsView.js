@@ -23,7 +23,7 @@ var RoomsView = {
     
     for ( var key in rooms ) {
       // display messages in a table style
-      code += '<option id = "key">' + key + '</option>';
+      code += '<option id = '+key+'>' + key + '</option>';
             
     }
     console.log(code);
