@@ -5,6 +5,32 @@ body {
     font-family: arial, sans-serif;
 }
 
+table{
+    margin: 20px;
+    padding: 10px, 0, 10px, 0;
+    border: 3px solid #99EEFF;
+    border-radius: 5px;
+    width: 100%;
+}
+
+thead{
+    text-align: left;
+}
+
+tbody tr{
+    background-color: #ddd;
+    height: 50px;
+    max-height: 150px;
+    text-indent: 20px;
+    text-align: left;
+}
+
+tfoot tr{
+    display: inline;
+    text-indent: 10px;
+    text-align: left;
+}
+
 #main, #chats {
     width: 500px;
     margin: auto;
