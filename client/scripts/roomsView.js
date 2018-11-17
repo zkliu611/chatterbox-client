@@ -7,6 +7,14 @@ var RoomsView = {
   },
 
   render: function() {
+  },
+  
+  renderRoom: function(roomName) {
+    var code = '<option id = "roomName">' + roomName + '</option>';
+    RoomsView.$select.append(code);
+    
   }
 
 };
+
+
