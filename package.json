@@ -7,7 +7,8 @@
     "jquery": "^3.3.1",
     "mocha": "^5.2.0",
     "sinon": "^6.3.4",
-    "underscore": "^1.9.1"
+    "underscore": "^1.9.1",
+    "xss": "^1.0.3"
   },
   "devDependencies": {},
   "scripts": {
