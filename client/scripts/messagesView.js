@@ -29,7 +29,11 @@ var MessagesView = {
       // display messages in a table style
       code += '<table>';
       code += '<thead class = username><tr><th>' + name + '</th></tr></thead>';
-      code += '<tbody><tr><th>' + text + '</th></tr></tbody>';
+      if (Friends.friendList[name]) {
+        code += '<tbody><tr><th><strong>' + text + '</strong></th></tr></tbody>';
+      } else {
+        code += '<tbody><tr><th>' + text + '</th></tr></tbody>';
+      }
       code += '<tfoot><tr><th>Message time: ' + time + '</th></tr></tfoot>';
       code += '</table>';    
           
