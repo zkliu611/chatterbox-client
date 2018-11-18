@@ -3,24 +3,30 @@ var App = {
   $spinner: $('.spinner img'),
 
   username: 'anonymous',
+  
   data: null,
 
   initialize: function() {
     App.username = window.location.search.substr(10);
     
-    // FormView.initialize();
-    // RoomsView.initialize();
-    // MessagesView.initialize();
-    
-    // initialize the brevious functions and refersh the out put every 0.5 sec
-    
-    setTimeout(FormView.initialize, 500);
-    setTimeout(RoomsView.initialize, 500);
-    setTimeout(MessagesView.initialize, 500);
-
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
+    
+    // initialize the brevious functions and refersh the out put every 0.5 sec
+    setTimeout(FormView.initialize, 500);
+    setTimeout(RoomsView.initialize, 500);
+    setTimeout(MessagesView.initialize, 500);
+    
+    // while (true) {
+      
+    //   App.sleep(1000);
+    //   FormView.render();
+    //   RoomsView.render();
+    //   MessagesView.render();
+    //   App.fetch(App.stopSpinner);
+      
+    // }
 
   },
 
@@ -42,5 +48,6 @@ var App = {
   stopSpinner: function() {
     App.$spinner.fadeOut('fast');
     FormView.setStatus(false);
-  }
+  },
+  
 };

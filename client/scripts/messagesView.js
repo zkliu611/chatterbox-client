@@ -8,6 +8,10 @@ var MessagesView = {
     
     MessagesView.render();
     
+    MessagesView.$chats.on('click', '.username', function(event) {
+      Friends.toggleStatus(event);
+    });
+    
   },
 
   render: function() {
@@ -24,7 +28,7 @@ var MessagesView = {
       
       // display messages in a table style
       code += '<table>';
-      code += '<thead class ="username" onclick="Friends.toggleStatus("name")"><tr><th>User: ' + name + ' </th></tr></thead>';
+      code += '<thead class = username><tr><th>' + name + '</th></tr></thead>';
       code += '<tbody><tr><th>' + text + '</th></tr></tbody>';
       code += '<tfoot><tr><th>Message time: ' + time + '</th></tr></tfoot>';
       code += '</table>';    

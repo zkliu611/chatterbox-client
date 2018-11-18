@@ -2,8 +2,10 @@ var Friends = {
 
   friendList: {},
   
-  toggleStatus: function(friend = '') {
-    
+  toggleStatus: function(event) {
+    // console.log(event);
+    var friend = event.currentTarget.textContent;
+    console.log(friend);
     if ( Friends.friendList.hasOwnProperty(friend) ) {
       delete Friends.friendList[friend];
       
@@ -11,7 +13,7 @@ var Friends = {
       
       Friends.friendList[friend] = true;
     }
-    console.log(friend);
+   
     console.log(this.friendList);
   }
   
